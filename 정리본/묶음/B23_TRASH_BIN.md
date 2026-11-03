@@ -16,15 +16,15 @@
 ## 3. 사실
 
 ### 3-1. 위치
-- TRASH BIN은 팔레트에 태워 AS/RS에 보관한다. 〔G153〕
-- 1층(작업자 제거)과 3층(디랩핑기 제거) 모두 제거한 비닐을 TRASH BIN에 담는다. 〔G073〕
+- TRASH BIN은 AS/RS에 보관한다. 보관 방식(팔레트에 태워 보관)은 「AS/RS」 묶음 3.3에 있다.
+- 비닐을 누가 벗겨 담나는 「GANTRY」(1층 작업자)·「3층 디팔레타이징·MIXED」(3층 디랩핑기) 묶음에 있다.
 
 ### 3-2. 투입·배출구
 - 원문에 없음. (요청 위치와 공급 경로는 → P15 TRASH BIN 공급)
 
 ### 3-3. 보관 단위·제약
 - TRASH BIN은 바코드(개체 ID)로 관리하지 않는다. 〔G153, BR-EQP-TRB-007, REQ-EQP-TRB-008〕
-- 재고는 TRASH BIN 제품의 통 개수로 관리한다. 〔G153, REQ-EQP-TRB-008〕
+- 재고는 TRASH BIN 제품의 통 개수로 관리한다. 〔G153, REQ-EQP-TRB-008, REQ-MST-PRD-009〕
 - 개별 통 식별과 통별 상태는 관리하지 않는다. 〔REQ-EQP-TRB-008〕
 - 팔레트 1개에 TRASH BIN 1개씩 관리한다. 요청·이동·보관 모두 팔레트 단위(= 통 1개)로 한다. 〔BR-EQP-TRB-010, REQ-EQP-TRB-009〕
 - TRASH BIN의 AS/RS 보관·출고는 TRASH BIN을 태운 팔레트의 팔레트 ID로 하고, 그 팔레트 ID로 위치를 관리한다. 〔REQ-EQP-TRB-009〕

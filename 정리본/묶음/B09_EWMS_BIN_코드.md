@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | BIN | EWMS가 재고위치를 묶어 관리하는 단위(EWMS BIN: RCV1·RCV3·RCV9·WCS1·AMVT·MMVT). | EWMS 로케이션, Storage Bin | EWM 표준 Storage Bin과 달리 큰 구역 단위로 쓴다 — 프로젝트 고유라 정의를 둔다(§9-8). 문서 표기는 BIN으로 통일한다 | 〔G035, BR-MST-LOC-038〕 |
 | BIN 마스터 | WCS가 관리하는 EWMS BIN 기준정보. 층과 BIN의 맵핑을 담고, 셀이 어느 BIN에 속하는지 정한다. | | | 〔G036〕 |
-| Stock Type | EWMS가 BIN과 함께 쓰는 재고위치 관리 기준 코드. | STOCK_TYPE, S.TYPE | EWM 표준 Stock Type(재고 유형)과 달리 위치 기준 코드로 쓴다 — 프로젝트 고유라 정의를 둔다(§9-8) | 〔G144〕 |
+| Stock Type | EWMS가 BIN과 함께 쓰는 재고위치 관리 기준 코드. | S.TYPE | EWM 표준 Stock Type(재고 유형)과 달리 위치 기준 코드로 쓴다 — 프로젝트 고유라 정의를 둔다(§9-8) | 〔G144〕 |
 | 자동화구역 | EWMS가 자동화 설비 재고를 관리하는 구역. Stock Type 0050, BIN WCS1이다. | | | 〔G176〕 |
 | WCS1 | 자동화 설비 구역 재고의 EWMS BIN. 자동화구역의 BIN이며 Stock Type은 0050이다. | | | 〔G171〕 |
 | RCV1 | 1층 입고장의 EWMS BIN(Stock Type 9011). | | | 〔G177〕 |
@@ -56,7 +56,7 @@
 - 9011 → 9015 전환은 EWMS가 처리한다. 〔G175〕
 - AMVT·MMVT는 EWMS BIN이다. WCS는 BIN 마스터 맵핑만 갖고, 별도 재고 위치로 두지 않는다. 〔REQ-INV-MVT-004〕
 
-**W/T DEST(Stock Type·BIN)가 가리키는 WCS 행선** 〔BR-MST-LOC-033, BR-INB-PLT-034〕
+**W/T 목적지(DEST: Stock Type·BIN)가 가리키는 WCS 행선** 〔BR-MST-LOC-033, BR-INB-PLT-034〕
 
 | DEST | WCS 행선 | 출처 |
 |---|---|---|
