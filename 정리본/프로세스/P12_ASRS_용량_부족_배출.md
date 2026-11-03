@@ -37,7 +37,7 @@ AS/RS 용량이 부족해 투입건을 보관하지 못할 때, 그 팔레트를
 
 ### Reject와 Bypass의 구분
 - 용량 부족 배출은 Reject 이력과 통합 Reject 처리 대상에 포함해 관리한다.
-- ⚠ 원문 불일치: 용량 부족 배출은 Bypass와 별개다(원문 BR-EQP-ASRS-039·REQ-EQP-ASRS-039도 「Reject에 포함, Bypass와 구분」).
+- ⚠ 원문 불일치: 용량 부족 배출은 Bypass와 별개다(원문 AS/RS 쪽 규칙·요구도 「Reject에 포함, Bypass와 구분」).
 - ⚠ 원문 불일치: 해당 유형 호기가 모두 고장·만재이면 용량 부족과 같이 「3층 Bypass」한다.
 
 ### 자리 확보
