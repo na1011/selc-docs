@@ -65,4 +65,4 @@ WCS는 자동화 설비 재고에 대해 HU PACK, HU UNPACK, HU SWAP 기능을 �
 - [미결 Q-154] HU PACK·UNPACK·SWAP 남은 정리
   - [추후 정리] (1) PACK·UNPACK·SWAP 항목·응답, 빈 HU의 HU 삭제 여부
   - (2) 팔레트갈이처럼 이어서 요청하다 중간에 실패한 경우(UNPACK 성공 후 PACK 실패) EWMS·WCS 상태 정합 방법
-- Q-154의 정해진 처리: 팔레트갈이 = UNPACK + PACK, 접근 가능 셀 = 셀 기준정보 설정 기준, 실패 시 처리 불가 제어, HU 작업 공통 절차·PACK·UNPACK·SWAP 호출·접근 가능 셀 관리 요구 채택.
+- Q-154의 정해진 처리: 팔레트갈이 = UNPACK + PACK, 접근 가능 셀 = 셀 기준정보 설정 기준, 실패 시 처리 불가 제어, HU 작업 공통 절차·PACK·UNPACK·SWAP 호출·접근 가능 셀 관리.
