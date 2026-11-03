@@ -25,7 +25,7 @@ EWMS가 보내는 작업 정보(오더·W/T·출고예정·입고예정정보)�
 
 ### B. 출고 오더 수신
 
-1. (EWMS→WCS) EWMS가 출고예정을 새벽에 1회 WCS로 보낸다. 정확한 시각은 EWMS 스케줄에 맞춘다. 〔BR-MST-ORD-023, REQ-MST-ORD-021, K16-IF02〕
+1. (EWMS→WCS) EWMS가 출고예정을 새벽에 1회 WCS로 보낸다. 정확한 시각은 EWMS 스케줄에 맞춘다. 〔BR-MST-ORD-023, REQ-MST-ORD-021, K16-IF02, G219〕
 2. (WCS) 1층 GANTRY 사전 보충과 3층 중소형 BOX 사전 보충이 모두 이 출고예정 수신분을 쓴다. → P22 GANTRY 사전·긴급 보충, → P27 3층 사전·긴급 보충 〔BR-MST-ORD-023, K16-F09.00〕
 3. (EWMS→WCS) EWMS가 피킹 W/T를 보낸다. 출고 DOCK과 시간대 Type이 들어 있다. 작업지시 단위는 직송 = FO, STO = ORG DO다. 〔K16-F09.00, K16-IF03〕
 4. (WCS) 피킹 W/T의 거래처·인도처가 등록·매핑되어 있지 않으면 거래처 정보 오류로 보류한다 → 5. 예외 B.

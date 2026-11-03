@@ -11,14 +11,14 @@
 가득 찬 통의 회수·비우기는 이 프로세스가 아니다. 그 책임은 「TRASH BIN」 묶음 3-4에 있다. 〔K25-F04.00〕
 
 ## 2. 흐름
-1. (작업자) TRASH BIN이 가득 찼는지 육안으로 판단해 설비 내 버튼을 누른다. 센서 등 자동 감지는 두지 않는다. 〔BR-EQP-TRB-017, K25-F04.01, REQ-EQP-TRB-014, G153〕
+1. (작업자) TRASH BIN이 가득 찼다고 판단하면 설비 내 버튼을 누른다. 만재를 누가 어떻게 판단하는지는 「TRASH BIN」 묶음 3-6에 있다. 〔BR-EQP-TRB-017, K25-F04.01, REQ-EQP-TRB-014, G153〕
 2. (현대무벡스 ECS→WCS) 1층·3층 TRASH BIN 보충을 요청한다. 〔BR-EQP-TRB-016, BR-EQP-TRB-017, K25-F04.01, BR-EQP-TRB-005, K25-OV03, REQ-EQP-TRB-013, REQ-EQP-TRB-014, REQ-EQP-TRB-022, G153〕
 3. (WCS→현대무벡스 ECS) 수신 직후 결과를 응답한다: 접수 / 공급 불가·대기 / 진행 중. 〔K25-IF02, REQ-EQP-TRB-022〕
 4. (WCS) 요청 단위의 별도 작업으로 TRASH BIN 공급을 만든다. 〔REQ-EQP-TRB-012〕
 5. (WCS) AS/RS에 보관된 빈 TRASH BIN을 선정해 예약한다(→ P33 재고 예약·보류). 〔K25-F04.02, REQ-EQP-TRB-005, REQ-EQP-TRB-002, REQ-EQP-TRB-013〕
 6. (WCS→AS/RS ECS) 출고를 지시하고 요청 위치까지 이동 작업을 만든다(→ P09 AS/RS 인출). 〔K25-F04.02, REQ-EQP-TRB-002, REQ-EQP-TRB-013, K25-IF04〕
 7. (AS/RS → 요청 위치) TRASH BIN을 옮긴다. 이동 단계·수단은 Workflow로 설정한다. 〔K25-F04.03, REQ-EQP-TRB-005, G153〕
-   - 1층: AS/RS → 보충 컨베이어 → GANTRY 입구. 보충 경로이며 AMR·유인지게차 단계가 없다(이 구간이 현대무벡스 내부 인계라는 것은 「GANTRY」 묶음 3-4). 〔REQ-EQP-TRB-016, REQ-EQP-TRB-005, K25-F04.03〕
+   - 1층: AS/RS → 보충 컨베이어 → GANTRY 입구. 보충 경로이며 AMR·유인지게차 단계가 없다(이 구간이 현대무벡스 내부 인계라는 것은 「설비 공통·설비사」 묶음 3.4). 〔REQ-EQP-TRB-016, REQ-EQP-TRB-005, K25-F04.03〕
    - 3층: AS/RS → 3층 출고대 배출까지다. 3층 출고대 → 디랩핑기는 작업자가 유인지게차로 옮기며 WCS 작업지시는 없다(→ P11 3층 출고대 도착 팔레트 처리). 〔REQ-EQP-TRB-005, K25-F04.03〕
 8. (AS/RS ECS→WCS) 출고 완료를 보고한다. 〔K25-IF05〕
 9. (ECS→WCS) TRASH BIN이 요청 위치에 도착하면 도착 알림을 보낸다(1층·3층). 도착 확인에 WCS PDA는 쓰지 않는다. 〔BR-EQP-TRB-025, K25-IF03, REQ-EQP-TRB-022, REQ-EQP-TRB-005〕

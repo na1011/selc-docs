@@ -53,7 +53,7 @@
 - W/T 확정 실적은 LOT 단위가 아니라 수신한 W/T 단위로 취합(합산)한다 〔BR-INV-WT-012, REQ-INV-WT-005〕
 
 ### 3-4. 통합 Work의 PARTIAL 순차 반영
-- 여러 원본 W/T(여러 PLANT의 W/T 포함)를 한 Work·Task로 묶어 처리한 뒤 일부만 처리(PARTIAL)되면, 실적 수량을 정해진 순서대로 원본 W/T 행에 순차적으로 채워 반영한다 〔BR-MST-STK-009, REQ-MST-STK-011, REQ-MST-STK-008, REQ-INV-WT-005, REQ-SYS-JOB-006〕
+- 여러 원본 W/T(여러 PLANT의 W/T 포함)를 한 Work·Task로 묶어 처리한 뒤 일부만 처리(PARTIAL)되면, 실적 수량을 정해진 순서대로 원본 W/T 행에 순차적으로 채워 반영한다 〔BR-MST-STK-009, REQ-MST-STK-011, REQ-MST-STK-008, REQ-INV-WT-005, REQ-SYS-JOB-006, REQ-SYS-JOB-008〕
 - 반영한 실적은 W/T·수신 PLANT 단위로 보낸다(PARTIAL 포함) 〔REQ-SYS-JOB-006, REQ-MST-STK-011〕
 - 부족분은 W/T별로 표시한다 〔REQ-MST-STK-008〕
 - 순서 규칙: ① 시간대 Type 마감이 빠른 W/T ② 같은 마감이면 EWMS 수신 일시가 빠른 W/T ③ 같으면 W/T 번호·행 번호 순 〔REQ-MST-STK-012〕
