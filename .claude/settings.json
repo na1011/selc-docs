@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push * --force*)",
+      "Bash(git push * -f*)",
+      "Bash(git push * +*)",
+      "Edit(~/selc-docs/**)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "n=$(git rev-list --count HEAD..main 2>/dev/null); if [ \"${n:-0}\" -gt 0 ]; then echo \"이 브랜치는 main보다 ${n}커밋 뒤처져 있다. 작업을 시작하기 전에 사용자에게 git rebase main을 제안한다.\"; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
