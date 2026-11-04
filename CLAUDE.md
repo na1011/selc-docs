@@ -13,28 +13,27 @@
 
 ## worktree
 
-<!-- 접속: 맥 한 대를 서버로 쓴다. 팀원은 Tailscale을 거쳐 SSH(공개키 전용)로 공용 계정 selc-team에 접속하고, 팀원마다 자기 이름의 tmux 세션 하나를 쓴다. -->
+<!-- 접속: 맥 한 대를 서버로 쓴다. 공용 계정 selc-team의 ~/selc-docs에서 `claude remote-control --spawn worktree` 서버 하나를 띄우고, 각 기기는 Claude 앱의 Remote Control로 붙는다. 앱에서 새 세션을 열 때마다 worktree가 따로 생긴다. -->
 
 | 경로 | 브랜치 | 용도 |
 |---|---|---|
-| `~/selc-docs` | `main` | 통합 전용. 여기서 직접 편집하지 않는다 |
-| `~/wt/<이름>` | `work/<이름>` | 각자의 작업 공간. worktree 이름은 팀원 이름과 같다 |
+| `~/selc-docs` | `main` | 통합 체크아웃이자 서버 위치. 여기서 직접 편집하지 않는다 |
+| `~/selc-docs/.claude/worktrees/<이름>` | `worktree-<이름>` | 세션마다 자동으로 생기는 작업 공간. `origin/main`에서 시작한다 |
 
-- 모든 worktree는 저장소 하나(`~/selc-docs/.git`)를 공유한다. 그래서 `main`은 fetch 없이 모든 세션에 바로 보인다.
-- 같은 계정이라 다른 사람의 worktree도 열 수 있지만, **자기 worktree 밖의 파일은 읽기만 하고 고치지 않는다.**
+- 모든 worktree는 저장소 하나(`~/selc-docs/.git`)를 공유한다. 반영(push)은 이 맥에서만 하므로, push가 성공하는 순간 모든 세션의 `origin/main`이 바뀐다. 기준은 `origin/main`이다. 로컬 `main`과 `~/selc-docs`의 파일은 서버를 시작할 때만 갱신되므로 기준으로 쓰지 않는다.
+- 다른 세션의 worktree도 열 수 있지만, **자기 worktree 밖의 파일은 읽기만 하고 고치지 않는다.**
 
 ## 공용 계정
 
-팀원 모두 계정 `selc-team` 하나로 접속한다. 그래서 다음은 사람별로 나뉘지 않고 팀 전체가 같이 쓴다.
+모든 세션이 계정 `selc-team`과 Claude 로그인 하나를 같이 쓴다. 그래서 다음은 세션별로 나뉘지 않고 모두가 같이 쓴다.
 
 - `~/.claude/`의 설정과 auto memory. `/effort`·`/model`·`/config`로 저장한 기본값도 여기에 들어가 모두에게 바뀐다.
 - `.claude/settings.local.json`. worktree마다 생기지 않고 `~/selc-docs/.claude/`에 하나만 생긴다. 권한 프롬프트의 "don't ask again" 승인도 여기에 쌓인다.
 
-사람별로 나누는 법:
+세션별로 나누는 법:
 
-- 사람별 지시는 자기 worktree 루트의 `CLAUDE.local.md`에 쓴다. gitignore돼 커밋되지 않고, 그 worktree에서 띄운 세션에만 로드된다.
-- auto memory에는 팀 전체에 맞는 사실만 저장한다. 한 사람의 취향은 저장하지 말고 그 사람의 `CLAUDE.local.md`에 쓰도록 안내한다.
-- 설정을 자기 세션에만 쓰려면 기본값으로 저장하지 않는다. 예: `/effort` 슬라이더에서 `Enter` 대신 `s`, 또는 `claude --effort <단계>`로 시작.
+- auto memory에는 모두에게 맞는 사실만 저장한다. 한 사람의 취향은 저장하지 않는다.
+- 설정을 자기 세션에만 쓰려면 기본값으로 저장하지 않는다. 예: `/effort` 슬라이더에서 `Enter` 대신 `s`.
 
 ## 작업과 커밋
 
@@ -49,7 +48,7 @@
 
 ## 금지
 
-- `git push --force`, `main`에 대한 `git reset --hard`, 다른 사람 브랜치 rebase나 삭제
+- `git push --force`, `main`에 대한 `git reset --hard`, 다른 세션 브랜치 rebase나 삭제
 - `~/selc-docs`(main)에서 직접 편집하거나 커밋하기
 
-force push와 `~/selc-docs` 파일 편집은 `.claude/settings.json`의 deny 규칙으로도 막는다.
+force push와 `~/selc-docs`의 커밋 대상 파일 편집은 `.claude/settings.json`의 deny 규칙으로도 막는다. worktree 세션에서 `~/selc-docs`를 가리키는 git 명령(`git -C ~/selc-docs` 등)은 Claude Code의 worktree 격리 검사가 막는다.

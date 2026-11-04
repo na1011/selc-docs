@@ -7,7 +7,12 @@
       "Bash(git push * --force*)",
       "Bash(git push * -f*)",
       "Bash(git push * +*)",
-      "Edit(~/selc-docs/**)"
+      "Edit(~/selc-docs/CLAUDE.md)",
+      "Edit(~/selc-docs/.gitignore)",
+      "Edit(~/selc-docs/.claude/settings.json)",
+      "Edit(~/selc-docs/.claude/skills/**)",
+      "Edit(~/selc-docs/임시문서팩/**)",
+      "Edit(~/selc-docs/정리본/**)"
     ]
   },
   "hooks": {
@@ -17,7 +22,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "n=$(git rev-list --count HEAD..main 2>/dev/null); if [ \"${n:-0}\" -gt 0 ]; then echo \"이 브랜치는 main보다 ${n}커밋 뒤처져 있다. 작업을 시작하기 전에 사용자에게 git rebase main을 제안한다.\"; fi"
+            "command": "[ \"$(git branch --show-current)\" = main ] && exit 0; n=$(git rev-list --count HEAD..origin/main 2>/dev/null); if [ \"${n:-0}\" -gt 0 ]; then echo \"이 브랜치는 origin/main보다 ${n}커밋 뒤처져 있다. 작업을 시작하기 전에 사용자에게 git rebase origin/main을 제안한다.\"; fi"
           }
         ]
       }
